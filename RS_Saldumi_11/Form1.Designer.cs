@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.Daudzums_TTb = new System.Windows.Forms.TextBox();
+            this.Izmaksas_TTb = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -37,19 +37,19 @@
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // Daudzums_TTb
             // 
-            this.textBox1.Location = new System.Drawing.Point(256, 85);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.Daudzums_TTb.Location = new System.Drawing.Point(256, 85);
+            this.Daudzums_TTb.Name = "Daudzums_TTb";
+            this.Daudzums_TTb.Size = new System.Drawing.Size(100, 20);
+            this.Daudzums_TTb.TabIndex = 0;
             // 
-            // maskedTextBox1
+            // Izmaksas_TTb
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(256, 156);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 1;
+            this.Izmaksas_TTb.Location = new System.Drawing.Point(256, 156);
+            this.Izmaksas_TTb.Name = "Izmaksas_TTb";
+            this.Izmaksas_TTb.Size = new System.Drawing.Size(100, 20);
+            this.Izmaksas_TTb.TabIndex = 1;
             // 
             // label1
             // 
@@ -79,6 +79,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Aprekinat";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -110,8 +111,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Izmaksas_TTb);
+            this.Controls.Add(this.Daudzums_TTb);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -122,8 +123,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.TextBox Daudzums_TTb;
+        private System.Windows.Forms.MaskedTextBox Izmaksas_TTb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;

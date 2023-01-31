@@ -36,5 +36,14 @@ namespace RS_Saldumi_11
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double nauda = Convert.ToDouble(Daudzums_TTb.Text);
+            double konfektes = 9.88;
+            double daudzums = nauda / konfektes;
+            daudzums = Math.Round(daudzums, 2);
+            this.Izmaksas_TTb.Text = Convert.ToString(daudzums);
+        }
     }
 }
