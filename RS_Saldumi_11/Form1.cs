@@ -12,6 +12,7 @@ namespace RS_Saldumi_11
 {
     public partial class Form1 : Form
     {
+        double cena = 0.00;
         public Form1()
         {
             InitializeComponent();
@@ -39,9 +40,42 @@ namespace RS_Saldumi_11
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            if (checkBox1.Checked == true && checkBox2.Checked == false && checkBox3.Checked == false)
+            {
+                cena = 9.88;
+            }
+            else if (checkBox1.Checked == false && checkBox2.Checked == true && checkBox3.Checked == false)
+            {
+                cena = 5.77;
+            }
+            else if (checkBox1.Checked == false && checkBox2.Checked == false && checkBox3.Checked == true)
+            {
+                cena = 7.88;
+            }
+            else if (checkBox1.Checked == true && checkBox2.Checked == true && checkBox3.Checked == true)
+            {
+                cena = 9.88 + 7.88 + 5.77;
+            }
+            else if (checkBox1.Checked == true && checkBox2.Checked == true && checkBox3.Checked == false)
+            {
+                cena = 9.88 + 5.77;
+            }
+            else if (checkBox1.Checked == true && checkBox2.Checked == false && checkBox3.Checked == true)
+            {
+                cena = 9.88 + 7.88;
+            }
+            else if (checkBox1.Checked == false && checkBox2.Checked == true && checkBox3.Checked == true)
+            {
+                cena = 5.77 + 7.88;
+            }
+            aprekini(cena);
+            
+        }
+        private void aprekini(double cena)
+        {
             double nauda = Convert.ToDouble(Daudzums_TTb.Text);
-            double konfektes = 9.88;
-            double daudzums = nauda / konfektes;
+            double daudzums = nauda / cena;
             daudzums = Math.Round(daudzums, 2);
             this.Izmaksas_TTb.Text = Convert.ToString(daudzums);
         }
