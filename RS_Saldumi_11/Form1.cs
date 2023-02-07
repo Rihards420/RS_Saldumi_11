@@ -20,7 +20,7 @@ namespace RS_Saldumi_11
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -40,6 +40,10 @@ namespace RS_Saldumi_11
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(Daudzums_TTb.Text))
+            {
+                Daudzums_TTb.Text = Convert.ToString(1);
+            }
 
             if (checkBox1.Checked == true && checkBox2.Checked == false && checkBox3.Checked == false)
             {
@@ -70,7 +74,6 @@ namespace RS_Saldumi_11
                 cena = 5.77 + 7.88;
             }
             aprekini(cena);
-            
         }
         private void aprekini(double cena)
         {
@@ -78,6 +81,11 @@ namespace RS_Saldumi_11
             double daudzums = nauda / cena;
             daudzums = Math.Round(daudzums, 2);
             this.Izmaksas_TTb.Text = Convert.ToString(daudzums);
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
