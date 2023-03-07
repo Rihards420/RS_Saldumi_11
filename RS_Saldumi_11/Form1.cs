@@ -13,8 +13,11 @@ namespace RS_Saldumi_11
 {
     public partial class Form1 : Form
     {
+        //Define cenu ka globalu mainigo
         double cena = 0.00;
-        
+
+
+
         public Form1()
         {
             InitializeComponent();
@@ -23,35 +26,12 @@ namespace RS_Saldumi_11
         {
 
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //Poga, kura izsauc funkciju
         private void button1_Click(object sender, EventArgs e)
         {
-            double nauda = Convert.ToDouble(Daudzums_TTb.Text);
-
-            if (nauda < 0)
-            {
-                MessageBox.Show("Ievadiet pozitivu naudas daudzumu!");
-            }
-            else
-            {
                 parbaudinators();
-            }
         }
+        //Funkcija, kas veic pieejama produkta daudzumu, sanemot naudas daudzumu.
         public void aprekini(double cena)
         {
             double nauda = Convert.ToDouble(Daudzums_TTb.Text);
@@ -59,7 +39,7 @@ namespace RS_Saldumi_11
             daudzums = Math.Round(daudzums, 2);
             this.Izmaksas_TTb.Text = Convert.ToString(daudzums);
         }
-
+        //Funkcija, kas parbauda izveletos checkboxus un attiecigi nosaka cenu un izsauc aprekinu funkciju.
         public void parbaudinators()
         {
             if (String.IsNullOrEmpty(Daudzums_TTb.Text))
@@ -67,7 +47,12 @@ namespace RS_Saldumi_11
                 MessageBox.Show("Ievadiet savu naudas daudzumu!");
             }
 
-            if (checkBox1.Checked == false && checkBox2.Checked == false && checkBox3.Checked == false)
+            if (Convert.ToInt32(Daudzums_TTb.Text)  < 0)
+            {
+                MessageBox.Show("Ievadiet pozitivu skaitli!"); 
+            }
+
+            else if (checkBox1.Checked == false && checkBox2.Checked == false && checkBox3.Checked == false)
             {
                 MessageBox.Show("Izvelaties, ko velaties iegadaties!");
             }
@@ -107,11 +92,6 @@ namespace RS_Saldumi_11
                 aprekini(cena);
             }
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         
 
         //Funkcija, kas saglaba ievaditos datus, kuru izsauc ceka izsisanas poga 
@@ -142,5 +122,6 @@ namespace RS_Saldumi_11
                 Saglabatajs();
             }
         }
+
     }
 }
