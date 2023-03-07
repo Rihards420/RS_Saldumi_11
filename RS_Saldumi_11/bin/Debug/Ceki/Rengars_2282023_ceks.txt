@@ -1,0 +1,4 @@
+Izmaksas: 123€
+Produkta daudzums: 12,45KG
+Vards: Rengars
+Datums: 2.28.2023
